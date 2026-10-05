@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.venv/
+venv/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Local data and runtime output
+.env
+.env.*
+!.env.example
+*.log
+data/experiments/
+
+# macOS
+.DS_Store

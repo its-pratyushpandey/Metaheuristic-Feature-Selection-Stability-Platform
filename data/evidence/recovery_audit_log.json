@@ -1,0 +1,38 @@
+[
+  {
+    "recovery_id": "REC_1788330822_NT-3",
+    "timestamp": "2026-09-02 12:03:42",
+    "failed_test_id": "NT-3",
+    "trigger_event": "NT3_OVERFITTING_GAP",
+    "observed_anomaly": "Generalization gap 0.333 exceeded 0.22 limit",
+    "risk_decision": "REVISE",
+    "action_taken": "Automated rollback to verified O2 baseline; restored conservative confidence thresholds; locked suspect weights.",
+    "restored_state": {
+      "model_version": "O2_Reference_Baseline_V1",
+      "active_threshold": 0.65,
+      "serving_status": "RESTORED_TO_CONSERVATIVE_FALLBACK",
+      "mode": "DEGRADED_ISOLATED"
+    },
+    "recovery_time_ms": 45.2,
+    "residual_limitation": "Subsystem operating in restricted feature envelope until retraining and re-acceptance passes AC-1..AC-4.",
+    "evidence_preserved_path": "/Users/pratyushkumarpandey/new capston project/data/evidence/quarantine_REC_1788330822_NT-3.json"
+  },
+  {
+    "recovery_id": "REC_1791172745_MANUAL-1",
+    "timestamp": "2026-10-05 09:29:05",
+    "failed_test_id": "MANUAL-1",
+    "trigger_event": "OPERATOR_MANUAL_TRIGGER",
+    "observed_anomaly": "Manual safety verification trigger",
+    "risk_decision": "REVISE",
+    "action_taken": "Automated rollback to verified O2 baseline; restored conservative confidence thresholds; locked suspect weights.",
+    "restored_state": {
+      "model_version": "O2_Reference_Baseline_V1",
+      "active_threshold": 0.65,
+      "serving_status": "RESTORED_TO_CONSERVATIVE_FALLBACK",
+      "mode": "DEGRADED_ISOLATED"
+    },
+    "recovery_time_ms": 45.21,
+    "residual_limitation": "Subsystem operating in restricted feature envelope until retraining and re-acceptance passes AC-1..AC-4.",
+    "evidence_preserved_path": "/Users/pratyushkumarpandey/new capston project/data/evidence/quarantine_REC_1791172745_MANUAL-1.json"
+  }
+]

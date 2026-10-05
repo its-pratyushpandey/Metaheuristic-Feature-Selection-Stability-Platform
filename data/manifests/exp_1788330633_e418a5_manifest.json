@@ -1,0 +1,84 @@
+{
+  "@context": "https://schema.org",
+  "@type": "MachineLearningExperimentManifest",
+  "manifest_version": "2.0.0",
+  "experiment_id": "exp_1788330633_e418a5",
+  "evidence_sha256": "235a4e2c235ae2660d3079ddad8e7797866a445bd1e891d57c7a03daf5063535",
+  "created_at": "2026-09-02T12:01:52Z",
+  "system_provenance": {
+    "application_name": "Metaheuristic Feature Selection Stability Across Data Resampling",
+    "framework_version": "2.0.0",
+    "author": "Antigravity Research Team",
+    "execution_environment": {
+      "os": "macOS / Darwin",
+      "python_version": "3.14.6",
+      "scikit_learn_version": "1.9.0",
+      "hardware_tier": "CPU-Optimized Standard Node"
+    }
+  },
+  "dataset_provenance": {
+    "dataset_id": "ionosphere",
+    "dataset_name": "Ionosphere Radar Returns",
+    "task_type": "classification",
+    "source_repository": "UCI ML Repository / Johns Hopkins APL",
+    "license": "CC-BY 4.0 / Public Benchmark",
+    "custodian": "UCI ML Repository",
+    "access_date": "2026-09-02",
+    "schema_validation": "PASSED_QUALITY_AUDIT",
+    "train_instances": 210,
+    "val_instances": 70,
+    "heldout_instances": 71,
+    "total_features": 34,
+    "scaling_protocol": "standard"
+  },
+  "algorithm_configuration": {
+    "algorithm": "ga",
+    "population_size": 15,
+    "n_iterations": 10,
+    "base_model": "rf",
+    "alpha_sparsity_tradeoff": 0.85,
+    "deterministic_seed": 42,
+    "resampling_protocol": "bootstrap",
+    "n_resamples": 6
+  },
+  "o2_reference_baseline": {
+    "selected_approach": "Filter-based Selection (SelectKBest k=17)",
+    "selected_features_count": 17,
+    "heldout_performance": 0.9577,
+    "latency_p95_ms": 1.89
+  },
+  "o3_stability_contribution": {
+    "stability_score_100": 15.01,
+    "nogueira_index": 0.118,
+    "average_jaccard": 0.2128,
+    "consistently_selected_features": [
+      "radar_pulse_5",
+      "radar_pulse_14"
+    ],
+    "search_artefacts_count": 19,
+    "confidence_interval_95": {
+      "lower": 0.1731,
+      "upper": 0.2598
+    }
+  },
+  "negative_tests_audit": {
+    "overall_status": "ALL_PASSED",
+    "passed_tests": [
+      "NT-1",
+      "NT-2",
+      "NT-3",
+      "NT-4",
+      "NT-5"
+    ]
+  },
+  "kpi_verification": {
+    "total_kpis": 6,
+    "passed_kpis": 3,
+    "compliance_rate": 50.0
+  },
+  "acceptance_verdict": {
+    "final_decision": "REVISE",
+    "rationale": "REVISE: Acceptance conditions or primary KPI targets were partially missed. Retuning resampling iterations, mutation rate, or alpha sparsity penalty is required.",
+    "all_acceptance_conditions_met": true
+  }
+}

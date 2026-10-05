@@ -1,0 +1,84 @@
+{
+  "@context": "https://schema.org",
+  "@type": "MachineLearningExperimentManifest",
+  "manifest_version": "2.0.0",
+  "experiment_id": "exp_1788330803_961c90",
+  "evidence_sha256": "daf0f27753ad05f710544880a75618227c5b71624b1f37d6b7ca336e01a3e635",
+  "created_at": "2026-09-02T12:03:42Z",
+  "system_provenance": {
+    "application_name": "Metaheuristic Feature Selection Stability Across Data Resampling",
+    "framework_version": "2.0.0",
+    "author": "Antigravity Research Team",
+    "execution_environment": {
+      "os": "macOS / Darwin",
+      "python_version": "3.14.6",
+      "scikit_learn_version": "1.9.0",
+      "hardware_tier": "CPU-Optimized Standard Node"
+    }
+  },
+  "dataset_provenance": {
+    "dataset_id": "sonar",
+    "dataset_name": "Sonar Mines vs Rocks",
+    "task_type": "classification",
+    "source_repository": "UCI ML Repository / Gorman & Sejnowski",
+    "license": "CC-BY 4.0 / Public Benchmark",
+    "custodian": "UCI ML Repository",
+    "access_date": "2026-09-02",
+    "schema_validation": "PASSED_QUALITY_AUDIT",
+    "train_instances": 124,
+    "val_instances": 42,
+    "heldout_instances": 42,
+    "total_features": 60,
+    "scaling_protocol": "standard"
+  },
+  "algorithm_configuration": {
+    "algorithm": "sa",
+    "population_size": 15,
+    "n_iterations": 10,
+    "base_model": "rf",
+    "alpha_sparsity_tradeoff": 0.85,
+    "deterministic_seed": 42,
+    "resampling_protocol": "bootstrap",
+    "n_resamples": 6
+  },
+  "o2_reference_baseline": {
+    "selected_approach": "Mutual Information Selection (k=30)",
+    "selected_features_count": 30,
+    "heldout_performance": 0.8095,
+    "latency_p95_ms": 1.698
+  },
+  "o3_stability_contribution": {
+    "stability_score_100": 8.66,
+    "nogueira_index": 0.0,
+    "average_jaccard": 0.2888,
+    "consistently_selected_features": [
+      "freq_band_31",
+      "freq_band_35",
+      "freq_band_45"
+    ],
+    "search_artefacts_count": 8,
+    "confidence_interval_95": {
+      "lower": 0.2575,
+      "upper": 0.3226
+    }
+  },
+  "negative_tests_audit": {
+    "overall_status": "FAILURES_DETECTED",
+    "passed_tests": [
+      "NT-1",
+      "NT-2",
+      "NT-4",
+      "NT-5"
+    ]
+  },
+  "kpi_verification": {
+    "total_kpis": 6,
+    "passed_kpis": 2,
+    "compliance_rate": 33.3
+  },
+  "acceptance_verdict": {
+    "final_decision": "HOLD / STOP",
+    "rationale": "CRITICAL HOLD: Mandatory negative safety tests or boundary failure tests failed. Deployment blocked by system guardrails.",
+    "all_acceptance_conditions_met": false
+  }
+}
